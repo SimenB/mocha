@@ -25,7 +25,7 @@ A "user" for the purpose of this document is any _individual developer_ who cons
 A user interacts with contributors.
 A user interacts with the software, web site, documentation, etc., which these contributors provide.
 
-As a user, you're expected to follow the [code of conduct](https://github.com/mochajs/mocha/blob/master/.github/CODE_OF_CONDUCT.md) when interacting in Mocha's "official" social spaces.
+As a user, you're expected to follow the [code of conduct](https://github.com/mochajs/mocha/blob/main/.github/CODE_OF_CONDUCT.md) when interacting in Mocha's "official" social spaces.
 This includes:
 
 - Any channel under the `mochajs` Discord
@@ -54,7 +54,7 @@ Contributions include (but are not limited to):
 1. Researching the user base, getting feedback, etc. Don't spam.
 
 A contributor is _usually_ a user as well, but this isn't a hard-and-fast rule.
-A contributor is also expected to adhere to the [code of conduct](https://github.com/mochajs/mocha/blob/master/.github/CODE_OF_CONDUCT.md) as a user would.
+A contributor is also expected to adhere to the [code of conduct](https://github.com/mochajs/mocha/blob/main/.github/CODE_OF_CONDUCT.md) as a user would.
 
 As you can see, it's wide open! Think of it another way: if you are _adding value to Mocha_, then you are a contributor.
 
@@ -123,7 +123,7 @@ You may choose to do zero or more of these _at their discretion_:
 - Add new maintainers to the team
 - Tag releases and publish Mocha to npm
 
-> While maintainers have the ability to commit directly to the `master` branch, _this is to be avoided_ if any other maintainer could reasonably take issue with the change, or the change affects Mocha's API or output.
+> While maintainers have the ability to commit directly to the `main` branch, _this is to be avoided_ if any other maintainer could reasonably take issue with the change, or the change affects Mocha's API or output.
 > For example, a spelling correction in `CHANGELOG.md` may not require a pull request.
 > A change to a reporter's output most certainly would! Maintainers are trusted to use their best judgement; if unsure, err on the side of caution.
 
@@ -211,8 +211,8 @@ For all issues, apply the following labels based on which area(s) the issue pert
 - `area: async`: Issues around Mocha's asynchronous usage
 - `area: browser`: Issues unique to a browser environment
 - `area: parallel`: Issues around Mocha's parallel mode
-- `area: qa`: Issues around Mocha's own test suite
 - `area: reporter`: Usually concerning Mocha's output
+- `area: repository tooling`: Issues around Mocha's CI, own test suite, or other internal tooling
 - `area: security`: Involving vulnerabilities, actual or potential
 - `area: windows`: Windows-specific issues, particularly around path discrepancies
 
@@ -221,13 +221,14 @@ Additionally:
 - `good first issue`: If the implementation is likely doable by someone who's never contributed to Mocha (or potentially any other open source project) before
 - `status: duplicate`: If an equivalent issue was already filed, add this label, close as not planned, and comment with something like `duplicate of #<other-issue-number>`
 - `status: in discussion`: Add this whenever the issue is blocked on community input and/or deeper discussions
+- `status: in triage`: Added on new issues; re-add this whenever the issue is awaiting maintainer attention
 - `status: waiting for author`: Add this whenever the issue is blocked on something from the author
 
 ### 🐛 Bugs
 
 Bug reports should include a way to reproduce the issue that someone who is not deeply familiar with Mocha can work with locally.
 
-Depending on that reproduction, add the following label(s) in addition to the auto-added `type: bug`:
+Depending on that reproduction, remove `status: in triage` and add the following label(s) in addition to the auto-added `type: bug`:
 
 - If the bug is valid and reproduction works: add `status: accepting prs`
 - If the bug might be valid but the reproduction isn't workable:
@@ -244,14 +245,14 @@ Depending on that reproduction, add the following label(s) in addition to the au
 
 Documentation reports should clearly indicate a gap or problem that should be addressed in documentation.
 Triage documentation issues similar to bugs and/or feature requests - documentation is its own form of product area.
-Keep the auto-added `area: documentation` label.
+Remove `status: in triage` and keep the auto-added `area: documentation` label.
 
 ### 🚀 Features
 
 Feature requests should include a compelling reason why we should spend the maintenance time on the feature.
 Given that Mocha is prioritizing stability over growth, this can be a high bar.
 
-Depending on the reasoning, add the following label(s) in addition to the auto-added `type: feature`:
+Depending on the reasoning, remove `status: in triage` and add the following label(s) in addition to the auto-added `type: feature`:
 
 - If the reasoning is valid and seems worth the maintenance cost: add `status: accepting prs`
 - If the reasoning is unclear:
@@ -268,12 +269,12 @@ Depending on the reasoning, add the following label(s) in addition to the auto-a
 
 Issues filed about improvements to Mocha's internal development processes.
 These can be more informally discussed by maintainers.
-Keep the auto-added `area: repository tooling`.
+Remove `status: in triage` and keep the auto-added `area: repository tooling`.
 
 ### ❓ Questions
 
 Our issue tracker is not the right place to ask questions.
-If an issue is filed that seems like it's more of a question, add the `type: question` label, politely direct the user to the [❓ Got a Question?](./.github/CONTRIBUTING.md#❓-got-a-question) section, and close the issue as not planned.
+If an issue is filed that seems like it's more of a question, remove `status: in triage`, add the `type: question` label, politely direct the user to the [❓ Got a Question?](./.github/CONTRIBUTING.md#❓-got-a-question) section, and close the issue as not planned.
 
 If it's _not_ a Mocha problem (people tend not to believe this), you may want to show a counter-example.
 It's often helpful to direct the issue author to the responsible project, if you can determine what that is.
@@ -346,8 +347,8 @@ Here are some suggestions:
 
 ## Branches
 
-`master` is the only maintained branch in `mochajs/mocha` or any of the other repos.
-**`master` is the only branch to which force-pushing is disallowed.**
+`main` is the only maintained branch in `mochajs/mocha` or any of the other repos.
+**`main` is the only branch to which force-pushing is disallowed.**
 
 Maintainers may push new branches to a repo, as long as they remove them when finished (merging a PR will prompt to do so).
 
@@ -370,7 +371,7 @@ Likewise, if the PR is `semver-minor`, create or use a new milestone correlating
 If it's unclear what the next milestone will be, use or create a milestone named `next`.
 This milestone will be renamed to the new version at release time.
 
-By using milestones, we can cherry-pick non-breaking changes into minor or patch releases, and keep `master` as the latest version.
+By using milestones, we can cherry-pick non-breaking changes into minor or patch releases, and keep `main` as the latest version.
 
 **This is subject to change, hopefully.**
 
@@ -379,7 +380,7 @@ By using milestones, we can cherry-pick non-breaking changes into minor or patch
 _It's easier to release often._
 
 1. Decide whether this is a `patch`, `minor`, or `major` release.
-1. Checkout `master` in your working copy & pull.
+1. Checkout `main` in your working copy & pull.
 1. Modify `CHANGELOG.md`; follow the existing conventions in that file.
    Use the "pull request" number, unless there isn't one.
    _You do not need to add Markdown links; this is done automatically._
@@ -390,22 +391,21 @@ _It's easier to release often._
    (Hint--use `-m`: e.g., `npm version patch -m 'Release v%s'`)
    1. This command will update the list of authors (from the Git history) in `AUTHORS`, and add GitHub links to `CHANGELOG.md`.
    1. These changes are then added to the Git "stage" and will be added to the commit.
-1. Push `master` to `origin` with your new tag; e.g. `git push origin master --tags`
+1. Push `main` to `origin` with your new tag; e.g. `git push origin main --tags`
 1. Copy & paste the `CHANGELOG.md` lines to a new GitHub "release".
    Save release as draft.
 1. Meanwhile, you can check [the build](https://travis-ci.org/mochajs/mocha) on Travis-CI and [GitHub Actions](https://github.com/mochajs/mocha/actions?query=workflow%3A%22Windows+CI%22).
    1. Once the build is green, you'll want to trigger an update of `mochajs.org`:
-   1. _If you're doing a prerelease_, fast-forward the `next` branch to `master`, and push it.
+   1. _If you're doing a prerelease_, fast-forward the `next` branch to `main`, and push it.
       This updates [https://next.mochajs.org](https://next.mochajs.org).
       That's all.
-   1. _If this is NOT a prerelease_, fast-forward the `mochajs.org` branch to `master` and push it.
+   1. _If this is NOT a prerelease_, fast-forward the `mochajs.org` branch to `main` and push it.
       This updates [https://mochajs.org](https://mochajs.org).
    1. _If this is a "final" release_ (the first release of a major _after_ one or more prereleases) then remove the `next` tag from npm via `npm dist-tag rm next`.
 1. Finally, you're satisfied with the release notes, open your draft release on GitHub, then click "publish."
 1. Back in your working copy, run `npm publish`.
    _If you're doing a prerelease, ensure that you use `--tag=next`._
 1. Announce the update on Twitter or just tell your dog or something.
-   New releases will be automatically tweeted by [@b0neskull](https://twitter.com/b0neskull) via a feed subscription to Mocha's "releases" page on GitHub.
 
 _Note: there are too many steps above._
 
